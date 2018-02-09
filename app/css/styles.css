@@ -1,0 +1,18 @@
+/* css */
+.container {
+  background: #ffeb00;
+  text-align: center; }
+
+table, th, td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px; }
+
+table {
+  width: 100%; }
+
+td {
+  width: 33.33%; }
+
+.border {
+  border-bottom: 2px solid black; }

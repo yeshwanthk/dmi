@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="SampleApp">
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Angular-Gulp-Browserify-Starter</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
+    <link rel="stylesheet" href="./css/styles.css"/>
+  </head>
+  <body ng-controller="MainCtrl">
+    <div class="container">
+      <h1>Angular</h1>
+      <!-- views -->
+      <div ng-view></div>
+        <div class="border"></div>
+        <br/>
+      <div>
+        <h2>This is directive</h2>
+        <p>Hello {{data.name}}!</p>
+        <two-way thing="data"></two-way>
+      </div>
+      <br/>
+
+        <div class="border"></div>
+        <br/>       
+         <h2>Data binding using Service Call</h2>
+         <table>
+            <tr ng-repeat="s in myService">
+                <td ng-if="$even" style="background-color:#9E9E9E;color: #ffffff">{{ $index + 1 }}</td>
+                <td ng-if="$odd">{{ $index + 1 }}</td>
+                <td ng-if="$even" style="background-color:#9E9E9E;color: #ffffff">{{ s.url}}</td>
+                <td ng-if="$odd">{{ s.id}}</td>
+                <td  ng-if="$even" style="background-color:#9E9E9E;color: #ffffff">{{ s.repos_url}}</td>
+                <td  ng-if="$odd">{{ s.login}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- scripts -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./js/bundled.js"></script>
+    <script src="./js/directives/directive.js"></script>
+    <script src="./js/services/storage.js"></script>
+    <script type="text/javascript">
+      angular.module('SampleApp',['SampleApp1','SampleApp2']);
+
+    </script>
+  </body>
+</html>
